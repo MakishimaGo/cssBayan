@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,14 +30,21 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-:hover, :checked, :active {
-
+html {
+    width:100vw;
+    overflow-x:hidden;
 }
 
 body {
 	line-height: 1;
     background-color: #f3eade;
     margin: 0 auto;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 h1 {
@@ -64,11 +72,8 @@ table {
 
 .accordion {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+
     transition: 2s ease-out;
-    
 }
 
 .acc-input {
@@ -94,17 +99,10 @@ label{
     color: #b32a04;
 }
 
-.acc-input:checked ~ .acc-text .acc-img{
-    display: block;
-    padding-bottom: 0.5em;
-    width: 20em;
-}
-
 .acc-input:checked ~ .acc-text .acc-plus img{
     transform: rotate(45deg);
     transition: 1s ease-out;
 }
-
 
 h2 {
     font-weight: 700;
@@ -121,8 +119,8 @@ h2 {
 }
 
 .acc-plus img {
-width: 1.5em;
-height: 1.5em;
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .acc-title {
@@ -131,11 +129,80 @@ height: 1.5em;
     justify-content: space-between;
 }
 
+.acc-img {
+    width: 20em;
+    height: 20em;
+}
+
+.acc-input:checked ~ .acc-text .acc-img{
+    display: flex;
+    padding-bottom: 0.5em;
+    width: 50%;
+    height: 50%;
+    transition: 1s ease-out;
+}
+
 .acc-text .acc-img {
     display: none;
     padding-bottom: 0.5em;
-    width: 10em;
     margin-left: auto;
     margin-right: auto;
 }
 
+
+@media screen and (min-width: 1920px) {
+    .wrapper {
+        width: 2000px;
+    }
+
+}
+
+@media screen and (min-width: 820px) and (max-width: 1920px) {
+    .wrapper {
+        width: 70%;
+        max-width: 1024px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 819px) {
+    .wrapper {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .acc-plus img {
+        height: 1em;
+        width: 1em;
+    }
+
+}
+
+@media screen and (max-width: 319px) {
+    .wrapper {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .acc-plus img {
+        height: .8em;
+        width: .8em;
+    }
+
+}
