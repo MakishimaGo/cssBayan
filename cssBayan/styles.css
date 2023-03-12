@@ -28,6 +28,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+:hover, :checked, :active {
+
+}
+
 body {
 	line-height: 1;
     background-color: #f3eade;
@@ -62,6 +67,8 @@ table {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    transition: 2s ease-out;
+    
 }
 
 .acc-input {
@@ -89,7 +96,15 @@ label{
 
 .acc-input:checked ~ .acc-text .acc-img{
     display: block;
+    padding-bottom: 0.5em;
+    width: 20em;
 }
+
+.acc-input:checked ~ .acc-text .acc-plus img{
+    transform: rotate(45deg);
+    transition: 1s ease-out;
+}
+
 
 h2 {
     font-weight: 700;
@@ -97,10 +112,29 @@ h2 {
     padding-bottom: 0.4em;
 }
 
+.accordion:hover .acc-plus {
+    display: block;
+}
+
+.acc-plus {
+    display: none;
+}
+
+.acc-plus img {
+width: 1.5em;
+height: 1.5em;
+}
+
+.acc-title {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
 .acc-text .acc-img {
     display: none;
     padding-bottom: 0.5em;
-    width: 20em;
+    width: 10em;
     margin-left: auto;
     margin-right: auto;
 }
