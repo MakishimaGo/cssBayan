@@ -72,8 +72,8 @@ table {
 
 .accordion {
     display: block;
-
-    transition: 2s ease-out;
+    transition: 2s;
+    color: black;
 }
 
 .acc-input {
@@ -95,19 +95,24 @@ label{
     cursor: pointer;
 }
 
-.acc-input:checked ~ .acc-text .acc-title{
-    color: #b32a04;
+.acc-input:checked + .acc-text .acc-title{
+    color: #166d00;
 }
 
-.acc-input:checked ~ .acc-text .acc-plus img{
+.acc-input:checked + .acc-text .acc-plus img{
     transform: rotate(45deg);
-    transition: 1s ease-out;
+    transition: 0.5s;
 }
 
 h2 {
     font-weight: 700;
     font-size: 1.5em;
     padding-bottom: 0.4em;
+}
+
+.accordion:hover {
+    color: #f20040;
+    transition: 0ms ease-in-out;
 }
 
 .accordion:hover .acc-plus {
@@ -121,6 +126,7 @@ h2 {
 .acc-plus img {
     height: 1.5em;
     width: 1.5em;
+    transition: 0.5s;
 }
 
 .acc-title {
@@ -129,26 +135,44 @@ h2 {
     justify-content: space-between;
 }
 
-.acc-img {
-    width: 20em;
-    height: 20em;
-}
-
-.acc-input:checked ~ .acc-text .acc-img{
-    display: flex;
+.acc-title:hover + .acc-img{
     padding-bottom: 0.5em;
     width: 50%;
     height: 50%;
-    transition: 1s ease-out;
+}
+
+.acc-img {
+    display: flex;
+    width: 0em;
+    height: 0em;
+}
+
+.acc-input:checked + .acc-text .acc-img{
+    padding-bottom: 0.5em;
+    width: 50%;
+    height: 50%;
 }
 
 .acc-text .acc-img {
-    display: none;
     padding-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
+    transition: 0.5s;
 }
 
+.acc-text:active ~ .accordion {
+    color: black;
+}
+
+.acc-text:active ~ .acc-title{
+    color: #f20040;
+    transition: 0.1s ease-in-out;
+}
+
+.acc-text:active .acc-img{
+    opacity: 0.5;
+    transition: 0.1s ease-in-out;
+}
 
 @media screen and (min-width: 1920px) {
     .wrapper {
