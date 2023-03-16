@@ -84,7 +84,7 @@ table {
 }
 
 .acc-item {
-    border-bottom: 1px solid #84111d;
+    border-bottom: 0.1em solid #84111d;
 }
 
 .acc-item:hover {
@@ -141,6 +141,11 @@ h2 {
     height: 50%;
 }
 
+.acc-title:hover + .acc-text .acc-plus{
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
 .acc-img {
     display: flex;
     width: 0em;
@@ -164,34 +169,34 @@ h2 {
     color: black;
 }
 
-.acc-text:active ~ .acc-title{
+.acc-text:active ~ .acc-title {
     color: #f20040;
     transition: 0.1s ease-in-out;
 }
 
-.acc-text:active .acc-img{
+.acc-text:active .acc-img {
     opacity: 0.5;
     transition: 0.1s ease-in-out;
 }
 
-@media screen and (min-width: 1920px) {
+@media (min-width: 1920px) {
     .wrapper {
-        width: 2000px;
+        width: 120em;
     }
 
 }
 
-@media screen and (min-width: 820px) and (max-width: 1920px) {
+@media (min-width: 820px) {
     .wrapper {
         width: 70%;
-        max-width: 1024px;
+        max-width: 119em;
     }
     h2 {
         font-size: 2em;
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 819px) {
+@media (min-width: 320px) {
     .wrapper {
         width: 70%;
     }
@@ -211,7 +216,7 @@ h2 {
 
 }
 
-@media screen and (max-width: 319px) {
+@media (max-width: 319px) {
     .wrapper {
         width: 70%;
     }
